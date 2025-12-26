@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: cea-postgres
+    environment:
+      POSTGRES_DB: cea
+      POSTGRES_USER: cea
+      POSTGRES_PASSWORD: cea
+    ports:
+      - "5434:5432"
+    volumes:
+      - cea_pgdata:/var/lib/postgresql/data
+
+volumes:
+  cea_pgdata:
